@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Helper Methods Part 3</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -10,7 +11,7 @@
     <%= javascript_importmap_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
-    <meta charset="utf-8">
+    
 
     <!-- Make it responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,17 +30,7 @@
     <%= render partial: "shared/navbar" %>
     
     <div class="container mt-3">
-      <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
-
-      <% if alert %>
-        <div class="alert alert-danger" role="alert">
-          <%= alert %>
-        </div>      
-      <% end %>
+      <%= render partial: "shared/flash_messages" %>
       
       <%= yield %>    
     </div>
